@@ -140,7 +140,7 @@ go_gapic_library(
     grpc_service_config = "policytroubleshooter_v3_grpc_service_config.json",
     importpath = "cloud.google.com/go/policytroubleshooter/iam/apiv3;iam",
     metadata = True,
-    release_level = "beta",
+    release_level = "ga",
     rest_numeric_enums = True,
     service_yaml = "policytroubleshooter_v3.yaml",
     transport = "grpc+rest",
@@ -272,6 +272,10 @@ nodejs_gapic_assembly_pkg(
     deps = [
         ":iam_nodejs_gapic",
         ":iam_proto",
+        "//google/iam/v1:policy_proto",
+        "//google/iam/v2:policy_proto",
+        "//google/rpc:status_proto",
+        "//google/type:expr_proto",
     ],
 )
 

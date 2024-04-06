@@ -28,6 +28,7 @@ proto_library(
         "event_create_and_edit.proto",
         "expanded_data_set.proto",
         "resources.proto",
+        "subproperty_event_filter.proto",
     ],
     deps = [
         "//google/api:annotations_proto",
@@ -174,6 +175,7 @@ py_gapic_library(
     name = "admin_py_gapic",
     srcs = [":admin_proto"],
     grpc_service_config = "admin_grpc_service_config.json",
+    opt_args = ["autogen-snippets=False"],
     rest_numeric_enums = True,
     service_yaml = "analyticsadmin_v1alpha.yaml",
     transport = "grpc+rest",
@@ -218,7 +220,7 @@ php_gapic_library(
     name = "admin_php_gapic",
     srcs = [":admin_proto_with_info"],
     grpc_service_config = "admin_grpc_service_config.json",
-    migration_mode = "PRE_MIGRATION_SURFACE_ONLY",
+    migration_mode = "MIGRATING",
     rest_numeric_enums = True,
     service_yaml = "analyticsadmin_v1alpha.yaml",
     transport = "grpc+rest",
@@ -332,6 +334,7 @@ load(
 
 csharp_proto_library(
     name = "admin_csharp_proto",
+    extra_opts = [],
     deps = [":admin_proto"],
 )
 

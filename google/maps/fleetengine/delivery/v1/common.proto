@@ -21,6 +21,7 @@ import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 import "google/type/latlng.proto";
 
+option csharp_namespace = "Google.Maps.FleetEngine.Delivery.V1";
 option go_package = "cloud.google.com/go/maps/fleetengine/delivery/apiv1/deliverypb;deliverypb";
 option java_multiple_files = true;
 option java_outer_classname = "Common";
@@ -135,7 +136,7 @@ message DeliveryVehicleLocation {
   // Timestamp associated with the raw location.
   google.protobuf.Timestamp raw_location_time = 17;
 
-  // Source of the raw location.
+  // Source of the raw location. Defaults to `GPS`.
   DeliveryVehicleLocationSensor raw_location_sensor = 28;
 
   // Accuracy of `raw_location` as a radius, in meters.
@@ -147,7 +148,8 @@ message DeliveryVehicleLocation {
   // Timestamp associated with the supplemental location.
   google.protobuf.Timestamp supplemental_location_time = 19;
 
-  // Source of the supplemental location.
+  // Source of the supplemental location. Defaults to
+  // `CUSTOMER_SUPPLIED_LOCATION`.
   DeliveryVehicleLocationSensor supplemental_location_sensor = 20;
 
   // Accuracy of `supplemental_location` as a radius, in meters.

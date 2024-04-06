@@ -34,6 +34,7 @@ proto_library(
         "fulfillment.proto",
         "gcs.proto",
         "generative_settings.proto",
+        "generator.proto",
         "import_strategy.proto",
         "inline.proto",
         "intent.proto",
@@ -105,8 +106,8 @@ java_gapic_library(
     rest_numeric_enums = True,
     service_yaml = "dialogflow_v3.yaml",
     test_deps = [
-        "//google/cloud/location:location_java_grpc",
         ":cx_java_grpc",
+        "//google/cloud/location:location_java_grpc",
     ],
     transport = "grpc+rest",
     deps = [
@@ -133,6 +134,8 @@ java_gapic_test(
         "com.google.cloud.dialogflow.cx.v3.ExperimentsClientTest",
         "com.google.cloud.dialogflow.cx.v3.FlowsClientHttpJsonTest",
         "com.google.cloud.dialogflow.cx.v3.FlowsClientTest",
+        "com.google.cloud.dialogflow.cx.v3.GeneratorsClientHttpJsonTest",
+        "com.google.cloud.dialogflow.cx.v3.GeneratorsClientTest",
         "com.google.cloud.dialogflow.cx.v3.IntentsClientHttpJsonTest",
         "com.google.cloud.dialogflow.cx.v3.IntentsClientTest",
         "com.google.cloud.dialogflow.cx.v3.PagesClientHttpJsonTest",
@@ -287,7 +290,7 @@ php_gapic_library(
     name = "cx_php_gapic",
     srcs = [":cx_proto_with_info"],
     grpc_service_config = "dialogflow_grpc_service_config.json",
-    migration_mode = "PRE_MIGRATION_SURFACE_ONLY",
+    migration_mode = "NEW_SURFACE_ONLY",
     rest_numeric_enums = True,
     service_yaml = "dialogflow_v3.yaml",
     transport = "grpc+rest",
@@ -404,6 +407,7 @@ load(
 
 csharp_proto_library(
     name = "cx_csharp_proto",
+    extra_opts = [],
     deps = [":cx_proto"],
 )
 

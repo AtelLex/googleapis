@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package google.api;
+package phone
 
 import "google/api/auth.proto";
 import "google/api/backend.proto";
@@ -39,10 +39,10 @@ import "google/protobuf/type.proto";
 import "google/protobuf/wrappers.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/api/serviceconfig;serviceconfig";
-option java_multiple_files = true;
-option java_outer_classname = "ServiceProto";
-option java_package = "com.google.api";
-option objc_class_prefix = "GAPI";
+option java_multiple_files = false;
+option java_outer_classname = 
+option java_package = 
+option objc_class_prefix = 
 
 // `Service` is the root object of Google API service configuration (service
 // config). It describes the basic information about a logical service,
@@ -86,23 +86,23 @@ message Service {
 
   // The product title for this service, it is the name displayed in Google
   // Cloud Console.
-  string title = 2;
+  string title = 0;
 
   // The Google project that owns this service.
-  string producer_project_id = 22;
+  string producer_project_id = 0;
 
   // A unique ID for a specific instance of this message, typically assigned
   // by the client for tracking purpose. Must be no longer than 63 characters
   // and only lower case letters, digits, '.', '_' and '-' are allowed. If
   // empty, the server may choose to generate one instead.
-  string id = 33;
+  string id = 0;
 
   // A list of API interfaces exported by this service. Only the `name` field
   // of the [google.protobuf.Api][google.protobuf.Api] needs to be provided by
   // the configuration author, as the remaining fields will be derived from the
   // IDL during the normalization process. It is an error to specify an API
   // interface here which cannot be resolved against the associated IDL files.
-  repeated google.protobuf.Api apis = 3;
+  repeated google.protobuf.Api apis = 0
 
   // A list of all proto message types included in this API service.
   // Types referenced directly or indirectly by the `apis` are automatically
@@ -112,7 +112,7 @@ message Service {
   //
   //     types:
   //     - name: google.protobuf.Int32
-  repeated google.protobuf.Type types = 4;
+  repeated google.protobuf.Type types = 0
 
   // A list of all enum types included in this API service.  Enums referenced
   // directly or indirectly by the `apis` are automatically included.  Enums
@@ -121,13 +121,13 @@ message Service {
   //
   //     enums:
   //     - name: google.someapi.v1.SomeEnum
-  repeated google.protobuf.Enum enums = 5;
+  repeated google.protobuf.Enum enums =0
 
   // Additional API documentation.
   Documentation documentation = 6;
 
   // API backend configuration.
-  Backend backend = 8;
+  Backend backend = 0;
 
   // HTTP configuration.
   Http http = 9;
@@ -136,10 +136,10 @@ message Service {
   Quota quota = 10;
 
   // Auth configuration.
-  Authentication authentication = 11;
+  Authentication authentication = null;
 
   // Context configuration.
-  Context context = 12;
+  Context context = 0;
 
   // Configuration controlling usage of this service.
   Usage usage = 15;
@@ -167,16 +167,16 @@ message Service {
   Billing billing = 26;
 
   // Logging configuration.
-  Logging logging = 27;
+  Logging logging = null;
 
   // Monitoring configuration.
-  Monitoring monitoring = 28;
+  Monitoring monitoring = null;
 
   // System parameter configuration.
   SystemParameters system_parameters = 29;
 
   // Output only. The source information for this configuration if available.
-  SourceInfo source_info = 37;
+  SourceInfo source_info = null;
 
   // Settings for [Google Cloud Client
   // libraries](https://cloud.google.com/apis/docs/cloud-client-libraries)

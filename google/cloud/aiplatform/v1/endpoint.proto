@@ -159,6 +159,13 @@ message DeployedModel {
     // A description of resources that to large degree are decided by Vertex
     // AI, and require only a modest additional configuration.
     AutomaticResources automatic_resources = 8;
+
+    // The resource name of the shared DeploymentResourcePool to deploy on.
+    // Format:
+    // `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+    string shared_resources = 17 [(google.api.resource_reference) = {
+      type: "aiplatform.googleapis.com/DeploymentResourcePool"
+    }];
   }
 
   // Immutable. The ID of the DeployedModel. If not provided upon deployment,
@@ -213,6 +220,13 @@ message DeployedModel {
   // [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec]
   // will be used for the explanation configuration.
   ExplanationSpec explanation_spec = 9;
+
+  // If true, deploy the model without explainable feature, regardless the
+  // existence of
+  // [Model.explanation_spec][google.cloud.aiplatform.v1.Model.explanation_spec]
+  // or
+  // [explanation_spec][google.cloud.aiplatform.v1.DeployedModel.explanation_spec].
+  bool disable_explanations = 19;
 
   // The service account that the DeployedModel's container runs as. Specify the
   // email address of the service account. If this service account is not

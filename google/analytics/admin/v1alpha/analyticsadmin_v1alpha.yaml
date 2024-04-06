@@ -22,24 +22,11 @@ authentication:
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.AuditUserLinks
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users,
-        https://www.googleapis.com/auth/analytics.manage.users.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchCreateAccessBindings
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchCreateUserLinks
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchDeleteAccessBindings
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchDeleteUserLinks
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
@@ -48,16 +35,7 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users,
         https://www.googleapis.com/auth/analytics.manage.users.readonly
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchGetUserLinks
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users,
-        https://www.googleapis.com/auth/analytics.manage.users.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchUpdateAccessBindings
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.BatchUpdateUserLinks
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
@@ -65,15 +43,7 @@ authentication:
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.CreateUserLink
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.DeleteAccessBinding
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.DeleteUserLink
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
@@ -97,6 +67,11 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetAdSenseLink
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetAttributionSettings
     oauth:
       canonical_scopes: |-
@@ -108,6 +83,11 @@ authentication:
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetBigQueryLink
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetCalculatedMetric
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
@@ -128,6 +108,11 @@ authentication:
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetCustomMetric
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetDataRedactionSettings
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
@@ -192,6 +177,11 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetRollupPropertySourceLink
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetSKAdNetworkConversionValueSchema
     oauth:
       canonical_scopes: |-
@@ -202,11 +192,11 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetUserLink
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.GetSubpropertyEventFilter
     oauth:
       canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users,
-        https://www.googleapis.com/auth/analytics.manage.users.readonly
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListAccessBindings
     oauth:
       canonical_scopes: |-
@@ -222,12 +212,22 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListAdSenseLinks
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListAudiences
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListBigQueryLinks
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListCalculatedMetrics
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
@@ -302,6 +302,11 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListRollupPropertySourceLinks
+    oauth:
+      canonical_scopes: |-
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListSKAdNetworkConversionValueSchemas
     oauth:
       canonical_scopes: |-
@@ -312,21 +317,17 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListUserLinks
+  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.ListSubpropertyEventFilters
     oauth:
       canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users,
-        https://www.googleapis.com/auth/analytics.manage.users.readonly
+        https://www.googleapis.com/auth/analytics.edit,
+        https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.RunAccessReport
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.edit,
         https://www.googleapis.com/auth/analytics.readonly
   - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.UpdateAccessBinding
-    oauth:
-      canonical_scopes: |-
-        https://www.googleapis.com/auth/analytics.manage.users
-  - selector: google.analytics.admin.v1alpha.AnalyticsAdminService.UpdateUserLink
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/analytics.manage.users
